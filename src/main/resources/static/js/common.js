@@ -23,8 +23,14 @@ var index={
                 t.select();
                 document.execCommand('copy');
                 document.body.removeChild(t);
+                if(confirm("상호명 :"+data.restaurantName+"쿠폰번호 : "+datasink+"\n 상호명과 쿠폰번호가 맞다면 예를 눌러 이동합니다."))
+                {
+                    location.href=data.link;
+                }else
+                {
+                    alert("다시한번 눌러주세요");
+                }
 
-                location.href=data.link;
             }).fail(function(data){
                 alert('실패했어요. 다시한번 누르거나 이미지를 확인해주세요.')
             })
